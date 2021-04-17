@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  height: 500px;
+  padding: 50px;
+}
+
+.head {
+  width: 200px;
+  height: 200px;
+  border: 7px solid #212e1f;
+  border-radius: 125px 25px 125px 25px;
+  transform: rotate(45deg);
+  margin: 10px auto 0 auto;
+  position: relative;
+  background: #81d600;
+  z-index: 100;
+  border-top-width: 6px;
+  border-left-width: 5px;
+  border-right-width: 8px;
+}
+
+.head:after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  border: 6px solid #212e1f;
+  border-bottom: 0;
+  background: #4b9d21;
+  height: 30px;
+  transform: rotate(-40deg);
+  z-index: -100;
+  left: 18px;
+  top: -3px;
+}
+
+.head:before {
+  content: "";
+  background: #81d600;
+  border-radius: 50%;
+  width: 40px;
+  height: 35px;
+  position: absolute;
+  border: 6px solid #212e1f;
+  border-bottom: none;
+  border-left-width: 5px;
+  border-right-width: 9px;
+  top: -28px;
+  left: -10px;
+  transform: rotate(-25deg);
+}
+
+.eye {
+  background: white;
+  border-radius: 50%;
+  border: 7px solid #212e1f;
+  width: 120px;
+  height: 130px;
+  position: absolute;
+}
+
+.left {
+  bottom: 8%;
+  left: -5%;
+  border-right-width: 10px;
+}
+
+.right {
+  top: -8%;
+  right: 5%;
+  transform: rotate(-45deg);
+  border-left-width: 9px;
+}
+
+.eye:after {
+  content: "";
+  height: 30px;
+  width: 25px;
+  background: #212e1f;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 200;
+}
+
+.left:after {
+  transform: rotate(-43deg);
+  height: 34px;
+  top: 26px;
+  right: 25px;
+}
+
+.right:after {
+  left: 17px;
+  top: 38px;
+}
+
+.right:before {
+  width: 60px;
+  background: white;
+  height: 73px;
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: -10px;
+}
+
+.body {
+  background: #81d600;
+  border-left: 7px solid #212e1f;
+  border-right: 7px solid #212e1f;
+  width: 250px;
+  height: 120px;
+  border-radius: 5%/50%;
+  margin: 0 auto;
+  position: relative;
+  top: -90px;
+}
+
+.body:after {
+  content: "";
+  background: #4b9d21;
+  border-radius: 50%;
+  position: absolute;
+  top: -78px;
+  left: 28px;
+  z-index: 1;
+  width: 180px;
+  height: 180px;
+  border-radius: 125px 25px 125px 25px;
+  transform: rotate(45deg);
+}
+
+.body:before {
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 40px;
+  border-radius: 0 0 50% 50%;
+  background: #81d600;
+  display: block;
+  bottom: -20px;
+  left: 1%;
+  box-shadow: 0 25px 0 #4b9d21, 0 32px 0 #212e1f;
+}
+
+.teeth {
+  display: block;
+  border: 7px solid #212e1f;
+  background: white;
+  width: 65px;
+  height: 65px;
+  border-radius: 20px/25px;
+  position: absolute;
+  z-index: 2;
+}
+
+.t1 {
+  top: -25px;
+  left: -9px;
+  transform: rotate(-4deg);
+}
+
+.t2 {
+  transform: rotate(-40deg);
+  left: 45px;
+  top: 22px;
+}
+
+.t3 {
+  top: 20px;
+  right: 45px;
+  transform: rotate(30deg);
+}
+
+.t4 {
+  right: -15px;
+  top: -20px;
+  border-radius: 38%/45%;
+  border-right-width: 10px;
+}
+
+.front-leg {
+  width: 70px;
+  height: 60px;
+  background: #81d600;
+  border: 7px solid #212e1f;
+  border-top: none;
+  border-radius: 40%/25%;
+  position: absolute;
+}
+
+.front-leg:after {
+  width: 100%;
+  height: 100%;
+  background: #81d600;
+  position: absolute;
+  content: "";
+  border-radius: inherit;
+  top: -20px;
+}
+
+.fl1 {
+  bottom: -60px;
+  left: 30px;
+  transform: rotate(5deg);
+  border-right-width: 9px;
+  border-bottom-width: 5px;
+}
+
+.fl2 {
+  bottom: -60px;
+  right: 30px;
+  transform: rotate(-5deg);
+  border-left-width: 8px;
+  border-bottom-width: 6px;
+  border-right-width: 5px;
+}
+
+.back-leg {
+  background: #4b9d21;
+  border: 7px solid #212e1f;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 40%/25%;
+  z-index: -1;
+}
+
+.bl1 {
+  bottom: -30px;
+  left: -35px;
+  transform: rotate(53deg);
+  border-left-width: 5px;
+  border-bottom-width: 8px;
+}
+
+.bl2 {
+  bottom: -30px;
+  right: -35px;
+  transform: rotate(-53deg);
+}
+
+    </style>
+    </head>
+    <body>
+        <div class="head">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+          </div>
+          <div class="body">
+            <span class="teeth t1"></span>
+            <span class="teeth t2"></span>
+            <span class="teeth t3"></span>
+            <span class="teeth t4"></span>
+          
+            <div class="front-leg fl1"></div>
+            <div class="front-leg fl2"></div>
+            <div class="back-leg bl1"></div>
+            <div class="back-leg bl2"></div>
+          </div>
+</body>
+</html>
